@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Opinión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #46b06d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .survey {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .survey h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .survey button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+        .survey button[value="Bueno"] {
+            background-color: #a6b3a9;
+        }
+        .survey button[value="Regular"] {
+            background-color: #a6b3a9;
+        }
+        .survey button[value="Malo"] {
+            background-color: #a6b3a9;
+        }
+        .results {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .results img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #f4f4f9;
+            color: #666;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>¡Bienvenido a la Encuesta de Opinión!</h1>
+    </header>
+    <main>
+        <section class="survey">
+            <h2>¿Qué te parece la Ciencia de Datos?</h2>
+            <form method="post">
+                <button type="submit" name="opinion" value="Bueno">Buena</button>
+                <button type="submit" name="opinion" value="Regular">Regular</button>
+                <button type="submit" name="opinion" value="Malo">Mala</button>
+            </form>
+        </section>
+
+        {% if show_graph %}
+        <section class="results">
+            <h2>Resultados de la Encuesta:</h2>
+            <img src="{{ graph_url }}" alt="Gráfico de resultados">
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        <p>Creado por Hugo Gama</p>
+    </footer>
+</body>
+</html>
